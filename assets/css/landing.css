@@ -1,0 +1,7 @@
+.background-jumbotron {
+
+    background-image: URL('../../assets/images/landing/bosquedestino.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: bottom;
+}

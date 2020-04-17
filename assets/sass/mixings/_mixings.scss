@@ -1,0 +1,15 @@
+/**se crea una funcion para propiedades repetitivas**/
+@mixin flex ($justify: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+}
+/**se llama la funcion en main con **/
+
+
+
+@mixin size ($with, $height) {
+    width: $with;
+    height: $height;
+    
+}

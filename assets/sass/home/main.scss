@@ -1,0 +1,125 @@
+   
+  /* Aquí se agregan las variables como buena practica se hace en otro doc */
+ @import '../variables/variables';
+    
+  /* buena practica agregar reset para que el navegador no desacomode los elementos */
+ @import '../resets/resets';
+
+ @import '../function/functions';
+ @import '../mixins/mixins';
+
+
+
+ /* creamos una funcion para jalar el arreglo de tamanos  */
+ @function getSize($size){
+   @return map-get($global-sizes, $size );
+ }
+
+
+ body {
+    font-family: $roboto;
+ }
+
+ .title-font {
+      @include $size
+      font-size:
+ }
+
+ .subtitle-font {
+    font-size: $text-medium;
+ }
+
+
+ .searchbar {
+    background-color: $color-white;
+    padding-left: $padding-big;
+    padding: $padding-small;
+    width: 500px;
+    @include flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 14px 14px 28px $color-reddark;
+    border-radius: 5px;
+  }
+
+
+
+
+
+  
+  .hide {
+    display: none;
+  }
+  
+   #home-cover {
+     background-image: url("/assets/images/img_cover_home.jpg");
+     
+/** manera 1 de llamar tamanos
+        width: getSize(huge); /**llamar la funcion arriba para traer los parametros del arreglo**/
+        /** height: getSize(huge); 
+        **/
+
+/**manera 2 de llamar tamanos con mixing**/
+      @include size (getSize(huge),getSize(huge));
+     /**   or  **/
+     /**@include size (50px,50px)); **/
+
+     background-repeat: no-repeat;
+     background-position: center;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     text-align: center;
+     color: $color-white;
+   }
+  
+  .text-shadow {
+    text-shadow: 1px 1px 4px $color-reddark;
+  }
+  
+
+
+  
+
+  
+  .searchbar > input {
+    width: $searchbar-width;
+    padding:  $searchbar-padding;
+    margin:  $searchbar-margin;
+    font-size:  $searchbar-font-size;
+    border:  $searchbar-border;
+    height:   $searchbar-height;
+  }
+  
+  .search-button {
+    height: $button-height;
+    width:  $button-width;
+    background-color: $color-bluedark;
+    color: $color-white;
+    border-radius: $button-radius;
+  }
+  
+  .search-button:active{
+    color: $color-bluelight;
+  }
+  
+  
+  /* Aquí se agregan margenes que pueden ser reutilizados en mi sitio web */
+  
+  .margin-bottom-sm {
+    margin-bottom: $margin-midium;
+  }
+  
+  .margin-bottom-md {
+    margin-bottom: $margin-big;
+  }
+  
+  #icons-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  
+  
+  }
